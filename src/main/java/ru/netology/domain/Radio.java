@@ -7,7 +7,6 @@ public class Radio {
     private int maxVolume = 10;
     private int minVolume = 0;
     private int currentVolume;
-
     public int getStation() {
         return currentChanel;
     }
@@ -16,21 +15,26 @@ public class Radio {
         if (currentChanel > maxChanel){
             return;
         }
+
         if (currentChanel < minChanel){
             return;
         }
+
         this.currentChanel = currentChanel;
     }
 
     public int getMaxChanel() {
         return maxChanel;
     }
+
     public void setMaxChanel(int maxChanel) {
         this.maxChanel = maxChanel;
     }
+
     public int getMinChanel() {
         return minChanel;
     }
+
     public void setMinChanel(int minChanel) {
         this.minChanel = minChanel;
     }
@@ -38,18 +42,20 @@ public class Radio {
     //Переключение вверх
     public void switchArrowsUp() {
         if (currentChanel == maxChanel) {
-            currentChanel = 0;
+            currentChanel = minChanel;
             return;
         }
+
         this.currentChanel ++;
     }
 
     //Переключение вниз
     public void switchArrowsDown() {
         if (currentChanel == minChanel){
-            currentChanel = 9;
+            currentChanel = maxChanel;
             return;
         }
+
         this.currentChanel --;
     }
 
